@@ -1,9 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  enabled: process.env.HUGO_ENVIRONMENT === "production",
   content: ['./layouts/**/*.html', './content/**/*.md', './content/**/*.html'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'LeagueSpartan': ['"Roboto Slab"', 'serif'],
+        'Montserrat': ['Montserrat', 'sans-serif']
+      },
+      colors: {
+        clifford: '#da373d',
+      },
+    }
   },
   plugins: [],
 }

@@ -2,11 +2,29 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-{{ $styles := resources.Get "css/main.css" | postCSS }}
-
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+</style>
 {{ if .Site.IsServer }}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'LeagueSpartan': ['"Roboto Slab"', 'serif'],
+            'Montserrat': ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            clifford: '#da373d',
+          },
+        }
+      }
+    }	
+  </script>
 {{ else }}
+  {{ $styles := resources.Get "css/main.css" | postCSS }}
   {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-  <link rel="stylesheet" href=".{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
 {{ end }}

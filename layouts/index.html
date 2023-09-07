@@ -1,6 +1,42 @@
 {{ define "main" }}
-<main class="container mx-auto px-4 py-24 bg-gray-100">
-    <h1>Welcome to Hugo with Tailwind CSS</h1>
-    <div class="text-gray-500">This is an example site with Tailwind CSS 2</div>
+<main class="">
+    <div class="relative">
+        <ul class="flex flex-row absolute top-7 left-16 gap-4 font-LeagueSpartan font-bold items-center">
+            <img class="w-32 mr-9" src="img/HorizontalPadrao.png">
+            <li>Quem somos</li>
+            <li>Atividades</li>
+            <li>Eventos</li>
+        </ul>
+        <h1 class="absolute w-5/12 top-32 left-16 font-bold text-5xl tracking-wide leading-tight">A CAS é o capítulo do IEEE CIMATEC voltado ao estudo e ensino de circuitos e sistemas.</h1>
+        <a class="absolute left-16 top-[400px] jus bg-white rounded-full p-2 tracking-normal font-LeagueSpartan leading-none" href="">Saiba mais</a>
+        <img class="" src="img/Banner.png">
+    </div>
+    <div class="mx-auto my-16 flex flex-row font-Montserrat text-lg justify-center items-center gap-56">
+        <div class="flex flex-col justify-center items-center w-36 gap-5 text-center">
+            <img class="w-20" src="img/group.png" alt="">
+            <p>XX membros em 1 ano</p>
+        </div>
+        <div class="flex flex-col justify-center items-center w-44 gap-5 text-center">
+            <img class="w-20" src="img/contente.png" alt="">
+            <p>3 publicações no NoticIEEEro #122</p>
+        </div>
+        <div class="flex flex-col justify-center items-center w-48 gap-5 text-center">
+            <img class="w-20" src="img/project-management.png" alt="">
+            <p>Desenvolvimento e contribuição em XX projetos</p>
+        </div>
+    </div>
+    <div id="Destaques" class="">
+        <div class="ml-28">
+            <h1 class="font-Montserrat text-3xl">Conecte-se com a gente</h1>
+            <p class="text-gray-500">@cascimatec</p>
+        </div>
+        <div class="flex flex-row h-[400px] items-center justify-center gap-10">
+            <img class="h-8 opacity-50" style="-moz-transform: scale(-1, -1);-o-transform: scale(-1, -1);-webkit-transform: scale(-1, -1);transform: scale(-1, -1);" src="img/Destaques/seta-direita.png"  alt="">
+            <img class="h-80" src="img/Destaques/arduino.png" alt="">
+            <img class="h-80" src="img/Destaques/noticIEEEro.png" alt="">
+            <img class="h-80" src="img/Destaques/postMulheres.png" alt="">
+            <img class="h-8 opacity-50" src="img/Destaques/seta-direita.png" alt="">
+        </div>
+    </div>
 </main>
 {{ end }}
