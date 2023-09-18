@@ -23,8 +23,6 @@
       }
     }	
   </script>
-  {{ $styles := resources.Get "css/main.css" | postCSS | fingerprint }}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
 {{ else }}
   {{ $styles := resources.Get "css/main.css" | postCSS }}
   {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
