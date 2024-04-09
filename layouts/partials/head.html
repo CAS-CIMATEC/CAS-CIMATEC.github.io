@@ -3,8 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:wght@700&display=swap');
 </style>
 {{ if .Site.IsServer }}
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,18 +12,23 @@
       theme: {
         extend: {
           fontFamily: {
-            'LeagueSpartan': ['"Roboto Slab"', 'serif'],
-            'Montserrat': ['Montserrat', 'sans-serif']
+            LeagueSpartan: ['"League Spartan"', 'serif'],
+            Montserrat: ['Montserrat', 'sans-serif']
           },
           colors: {
-            clifford: '#da373d',
-          },
+            clifford: '#da373d'
+          }
         }
       }
-    }	
+    };
   </script>
 {{ else }}
   {{ $styles := resources.Get "css/main.css" | postCSS }}
-  {{ $styles := $styles | minify | resources.PostProcess }}
-  <link rel="stylesheet" href=".{{ $styles.RelPermalink }}"/>
+  {{ $styles :=
+    $styles | minify | resources.Fingerprint "sha512" | resources.PostProcess
+  }}
+  <link
+    rel="stylesheet"
+    href=".{{ $styles.RelPermalink }}"
+    integrity="{{ $styles.Data.Integrity }}" />
 {{ end }}

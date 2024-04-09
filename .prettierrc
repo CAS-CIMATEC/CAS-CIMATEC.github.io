@@ -1,0 +1,29 @@
+{
+    "singleQuote": true,
+    "printWidth": 80,
+    "editor.formatOnSave": true,
+    "proseWrap": "always",
+    "tabWidth": 4,
+    "requireConfig": false,
+    "useTabs": false,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "bracketSameLine": true,
+    "jsxBracketSameLine": true,
+    "semi": true,
+    "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-go-template"],
+    "overrides": [
+        {
+            "files": "head.html",
+            "options": {
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": ["*.html"],
+            "options": {
+                "parser": "go-template"
+            }
+        }
+    ]
+}

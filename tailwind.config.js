@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'LeagueSpartan': ['"Roboto Slab"', 'serif'],
-        'Montserrat': ['Montserrat', 'sans-serif']
+        LeagueSpartan: ['"League Spartan"', 'serif'],
+        Montserrat: ['Montserrat', 'sans-serif']
       },
       colors: {
         clifford: '#da373d',
